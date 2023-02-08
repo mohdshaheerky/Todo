@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 431px; height: auto;background-color: antiquewhite;text-align: center;margin-left: 439px; margin-top: 39px;    border: 0.5px solid;    box-shadow: 0 2px 3px grey;">
+    <h2 style="text-align:center ;">---TODO APP---</h2>
+    <p style="margin-top: 0px;text-align: center;font-size: larger;text-decoration: ">
+        <a style="color:black ;" href="{% url 'createpost' %}">create post</a></p>
+
+    <div class="d1">
+        {% for p in Todo %}
+        <div class="d1">
+         <!-- <h3 style="text-align:center ; margin-top:10px;">ID{{p.id }}</h3>   -->
+         <div>
+         <h3 >{{p.Title }}</h3>
+         <a style="margin-right: 203px;font-style: oblique;color: black;"  href="{% url 'deletepost' p.id %}">Delete Post</a>
+          <a style="font-style: oblique;color: black;"  href="{% url 'updatepost' p.id %}">Edit Post</a>
+          <hr>
+        </div>
+         
+         
+        </div>
+        {% endfor %}
+    </div>
+        
+    </div>
+
+
+
+</body>
+</html>
